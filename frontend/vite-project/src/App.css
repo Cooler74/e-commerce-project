@@ -1,0 +1,165 @@
+/* Layout Container */
+.shop-layout {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  color: #555;
+}
+
+.sidebar li:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.sidebar li.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+}
+
+/* Main Content & Grid */
+.content {
+  flex-grow: 1;
+}
+
+.content h1 {
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.product-grid {
+  display: grid;
+  /* This creates the responsive grid automatically */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* Product Card Component Styles */
+.product-card {
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* Ensures placeholder images don't look stretched */
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-card p {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.product-card button {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.product-card button:hover {
+  background-color: #444;
+}
+
+/* Responsive adjustments for Mobile */
+@media (max-width: 768px) {
+  .shop-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/* Loading Spinner Container */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+/* The actual Animated Spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Message Styling */
+.error-message {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #f87171;
+  text-align: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  background-color: #f0f0f0; /* This shows a grey box if the image is loading/missing */
+}
