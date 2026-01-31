@@ -163,3 +163,73 @@ img {
   max-width: 100%;
   background-color: #f0f0f0; /* This shows a grey box if the image is loading/missing */
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Smooth fade-in for all pages */
+.App {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Global button hover effect */
+button:hover {
+  filter: brightness(90%);
+  transition: 0.2s ease-in-out;
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px; /* Forces a consistent height */
+  object-fit: cover; /* Prevents stretching */
+  border-bottom: 1px solid #eee;
+}
+
+/* Ensure the container matches the image size */
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.badge.out-of-stock {
+  background-color: #333;
+  color: white;
+}
+
+.badge.low-stock {
+  background-color: #e67e22; /* Warning Orange */
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}

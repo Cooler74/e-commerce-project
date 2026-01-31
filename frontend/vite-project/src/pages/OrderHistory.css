@@ -1,0 +1,117 @@
+.history-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.history-header {
+  margin-bottom: 30px;
+}
+
+.history-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.history-header p {
+  color: #666;
+}
+
+/* Order Card Style */
+.order-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.order-card-header {
+  background: #f8f9fa;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.header-info .label {
+  display: block;
+  font-size: 0.7rem;
+  color: #777;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.header-info .value {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Status Badges */
+.order-status-row {
+  display: flex;
+  gap: 15px;
+  padding: 20px 25px;
+}
+
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-badge.paid { background: #e7f5ea; color: #1e7e34; }
+.status-badge.processing { background: #fff4e5; color: #d97706; }
+
+/* Item Preview */
+.order-items-preview {
+  padding: 0 25px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.preview-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.preview-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.preview-details p {
+  margin: 0;
+  font-weight: 600;
+  color: #222;
+}
+
+.preview-details span {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.order-card-footer {
+  padding: 15px 25px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.details-btn {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.details-btn:hover {
+  text-decoration: underline;
+}

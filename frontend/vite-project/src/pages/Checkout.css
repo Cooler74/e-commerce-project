@@ -1,0 +1,112 @@
+.checkout-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Progress Stepper */
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.step {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.step.active {
+  color: #222;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.step-line {
+  flex: 0 1 40px;
+  height: 1px;
+  background: #eee;
+  margin: 0 15px;
+}
+
+/* Form Card */
+.shipping-card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.shipping-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #444;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button */
+.continue-btn {
+  width: 100%;
+  padding: 15px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+
+.continue-btn:hover {
+  background: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+}
+
+.radio-label {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.radio-label:hover {
+  background: #f9f9f9;
+}
+
+.radio-label input {
+  width: auto !important; /* Overrides the 100% width from general inputs */
+}

@@ -1,12 +1,19 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom'; // Added to read URL params
 import ProductCard from '../components/ProductCard';
+import Loader from '../components/Loader'; // Using your professional loader
 import '../App.css';
 
-const Products = ({ searchTerm }) => {
+const Products = () => { // Removed searchTerm prop, we'll get it from URL
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState('');
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // New error state
+  const [error, setError] = useState(null);
+
+  // 1. Hook to access the URL search string (?search=...)
+  const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+  const searchTerm = queryParams.get('search') || ''; // Extract 'search' value
 
   const categories = ['Electronics', 'Clothing', 'Accessories', 'Footwear'];
 
@@ -14,7 +21,7 @@ const Products = ({ searchTerm }) => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        setError(null); // Reset error on new search
+        setError(null);
 
         const params = new URLSearchParams();
         if (category) params.append('category', category);
@@ -36,7 +43,7 @@ const Products = ({ searchTerm }) => {
     };
 
     fetchProducts();
-  }, [category, searchTerm]);
+  }, [category, searchTerm]); // Now updates when either changes
 
   return (
     <div className="shop-layout">
@@ -61,12 +68,8 @@ const Products = ({ searchTerm }) => {
       <main className="content">
         <h1>{searchTerm ? `Results for "${searchTerm}"` : (category || 'Our Collection')}</h1>
         
-        {/* CONDITIONAL RENDERING */}
         {loading ? (
-          <div className="loader-container">
-            <div className="spinner"></div>
-            <p>Fetching products...</p>
-          </div>
+          <Loader /> // Using your standardized Loader component
         ) : error ? (
           <div className="error-message">
             ⚠️ Error: {error}. Please ensure the backend server is running.
